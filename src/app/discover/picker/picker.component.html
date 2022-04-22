@@ -1,0 +1,22 @@
+<div class="picker text-center px-2" #picker *ngIf="!showForm">
+    
+  
+<!--
+  <div class="d-flex justify-content-center mt-2">
+      <div class="input-group rounded w-25 searchBox">
+          <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" (change)="filterTrainings($event)"/>
+          <span class="input-group-text border-0" id="search-addon">
+            <i class="fas fa-search"></i>
+          </span>
+        </div>
+  </div>
+-->
+  <div class="wrapper">
+      <div class="card-container" #cardContainer (scroll)="userScrolled($event)">
+              <app-card *ngFor="let training of trainingList"  [training]="training"></app-card> 
+      </div>
+  </div>
+  
+  
+</div>
+<!--(enrollClicked)="enrollForm($event)" <app-form [selectedTraining]="selectedTraining" *ngIf="showForm" (backToBoard)="backToBoardhandler()"></app-form> -->

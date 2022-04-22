@@ -1,0 +1,123 @@
+<ion-header [translucent]="true">
+  <!--<ion-toolbar>
+    <ion-title>
+      Blank
+    </ion-title>
+  </ion-toolbar>-->
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <div id="container">
+        <div class="forms d-flex flex-column">
+          <div class="image-container align-self-center">
+            <img src="/assets/icon/logo.png" alt="" width="70%">
+          </div>
+          
+          <div class="form-container mt-5" #formContainer>
+            <form class="loginform" [formGroup]="userLogin" (submit)="loginForm()">
+              <div class="login-form form-group d-flex flex-column">
+                <h1 class="align-self-center">Sign in</h1>
+                <div class="mb-3">
+                  <div class="ui icon input w-100">
+                    <i class="envelope icon"></i>
+                    <input type="email" placeholder="Email" id="email-login" name="email-login" formControlName="email" required>
+                  </div>
+                </div>
+
+                <div class="mb-2">
+                  <div class="ui icon input w-100">
+                    <i class="key icon"></i>
+                    <input type="password" placeholder="Password" id="password-login" name="password-login" formControlName="password" required>
+                  </div>
+                </div>
+                <a class="align-self-center mb-4">Frogot password ?</a>
+  
+                <button class="form-btn align-self-center" [disabled]="!userLogin.valid">Login</button>
+
+                <div *ngIf="userLogin.invalid && userLogin.touched" class="alert alert-danger mt-4">
+                  <ul *ngFor="let input of userLogin.controls | keyvalue" class="my-0 py-0">
+                      <li *ngFor="let error of input.value.errors | keyvalue">{{getKey(input.key)}} : {{getError(error.key)}}</li>
+                  </ul>        
+                </div>
+
+              </div>
+          </form>
+  
+            <form class="signupform w-100" [formGroup]="userSignUp" (submit)="signupForm()">
+                <div class="signup-form d-flex flex-column">
+                  <div class="mb-3">
+                    <div class="ui icon input w-100">
+                      <i class="id card icon"></i>
+                      <input type="text" placeholder="First Name" id="first-signup" name="first-signup" formControlName="firstname" required>
+                    </div>
+                  </div>
+
+                  <div class="mb-3">
+                    <div class="ui icon input w-100">
+                      <i class="id card icon"></i>
+                      <input type="text" placeholder="Last Name" id="last-signup" name="last-signup" formControlName="lastname" required>
+                    </div>
+                  </div>
+
+                  <div class="mb-3">
+                    <div class="ui icon input w-100">
+                      <i class="envelope icon"></i>
+                      <input type="email" placeholder="Email" id="email-signup" name="email-signup" formControlName="email" required>
+                    </div>
+                  </div>
+
+                  <div class="mb-3">
+                    <div class="ui icon input w-100">
+                      <i class="key icon"></i>
+                      <input type="password" placeholder="Password" id="password-signup" name="password-signup" formControlName="password" required (change)="passwordConfirmation()">
+                    </div>
+                  </div>
+
+                  <div class="mb-3">
+                    <div class="ui icon input w-100">
+                      <i class="key icon"></i>
+                      <input type="password" placeholder="Password Confirmation" id="password-confirmation-signup" name="password-confirmation-signup" formControlName="passwordConf" required (change)="passwordConfirmation()">
+                    </div>
+                    <small *ngIf="!passwordMatch && userSignUp.controls.passwordConf.touched" class="form-text text-danger">Passwords doesn't match.</small>
+                  </div>
+                  <button class="form-btn align-self-center mt-4" [disabled]="!userSignUp.valid || !passwordMatch">Sign Up</button>
+                </div>
+            </form>
+          </div>
+          
+        </div>
+        <div #toggleBtn class="toggle-button" (click)="toggleForm(toggleBtn, toggleIcon, toggleText, formContainer)">
+            <div #toggleIcon class="d-flex align-items-center justify-content-center">
+                <img src="/assets/icon/back.png" alt="" width="30px">
+            </div>
+            <div #toggleText  class="d-flex justify-content-center align-items-center flex-grow-1 h-100">
+                Sign Up
+            </div>
+        </div>
+
+        <div class="loading-container">
+            <i class="notched circle loading icon"></i>
+            <p>Loading</p>   
+        </div>
+        <div class="ui red icon message login-error">
+          <i class="times icon"></i>
+          <div class="content">
+            <div class="header">
+              Connection Error
+            </div>
+            <p>Email or password is incorrect.</p>
+          </div>
+        </div>
+
+        <div class="ui red icon alert signup-error">
+          <i class="times icon"></i>
+          <div class="content">
+            <div class="header">
+              Connection Error
+            </div>
+            <p>Email is already registred.</p>
+          </div>
+        </div>
+  </div>
+</ion-content>

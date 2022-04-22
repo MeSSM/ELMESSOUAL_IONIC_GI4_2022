@@ -1,0 +1,125 @@
+
+.card {
+    width: 200px;
+    min-width: 200px;
+    margin: 10px;
+    border-radius: 10px;
+    padding: 0;
+    border: none;
+    height: 95%;
+}
+
+
+.training-cover {
+    border-radius: 10px 10px 0 0;
+    height: 120px;
+}
+
+.card-body{
+    position: relative;
+    padding: 10px;
+}
+
+.card-body p:first-child{
+    text-align: left;
+    color: #8e9aaf;
+    font-size: 12px;
+    font-weight: 500;
+    margin-bottom: 4px;
+}
+
+.card-body p:nth-child(2){
+    text-align: left;
+    font-size: 18px;
+    font-weight: 900;
+    margin-bottom: 2px;
+}
+
+.card-body p:nth-child(3){
+    text-align: left;
+    color: #415a77;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.card-body p:nth-child(4){
+    display: block;
+    position: absolute;
+    bottom: 0px;
+    left: 20px;
+    text-align: left;
+    color: #415a77;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.details {
+    display: block;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    align-items: center;
+    background-image: linear-gradient(144deg,#AF40FF, #5B42F3 50%,#00DDEB);
+    border: 0;
+    border-radius: 8px;
+    box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    display: flex;
+    font-size: 16px;
+    justify-content: center;
+    padding: 2px;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+    cursor: pointer;
+  }
+  
+  .details:active,
+  .details:hover {
+    outline: 0;
+  }
+  
+  .details span {
+    display: flex;
+    align-items: center;
+    background-color: #05062d;
+    padding: 0px 16px;
+    border-radius: 6px;
+    width: 100%;
+    height: 25px;
+    transition: 300ms;
+  }
+  
+  .details:hover span {
+    background: none;
+  }
+
+  .card-description {
+      height: 80px;
+      overflow-y: hidden;
+  }
+
+  .price {
+      padding-bottom: 0;
+      margin-bottom: 12px;
+  }
+
+  .Fav{
+      position: absolute;
+      right: 0px;
+      top: 10px;
+      font-size: 25px;
+      color: black;
+  }
+  .heart{
+      color: red;
+      -webkit-text-stroke-width: 3px;
+      -webkit-text-stroke-color: black;
+  }
+  .heart.outline {
+      color: black;
+      -webkit-text-stroke-width: 0px;
+  }

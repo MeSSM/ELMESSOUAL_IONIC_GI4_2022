@@ -1,0 +1,105 @@
+#container {
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    height: 100%;
+    width: 100%;
+    padding: 30px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.placeholder {
+    display: block;
+    width: 250px;
+    height: 150px;
+    border-radius: 10px;
+}
+
+.Card {
+    padding: 30px;
+    border-radius: 10px;
+    background: linear-gradient(to top, #fc5c7d, #6a82fb);
+    box-shadow: 5px 5px 10px rgba($color: #000000, $alpha: 0.6);
+    transform: translateX(-5px);
+}
+.Card .title {
+    font-size: 30px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.image{
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px rgba($color: #000000, $alpha: 0.6);
+    min-width: 250px;
+    height: 150px;
+}
+
+.price {
+    color: #fff;
+    font-size: 25px;
+    font-weight: 500;
+}
+
+.details {
+    display: block;
+    align-items: center;
+    background-image: linear-gradient(144deg,#AF40FF, #5B42F3 50%,#00DDEB);
+    border: 0;
+    border-radius: 8px;
+    box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    display: flex;
+    font-size: 16px;
+    justify-content: center;
+    padding: 3px;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+    cursor: pointer;
+  }
+  
+  .details:active,
+  .details:hover {
+    outline: 0;
+  }
+  
+  .details span {
+    display: flex;
+    align-items: center;
+    background-color: #05062d;
+    padding: 6px 30px;
+    border-radius: 6px;
+    width: 100%;
+    height: 50px;
+    transition: 300ms;
+  }
+  
+  .details:hover span {
+    background: none;
+  }
+
+
+.success {
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba($color: #06d6a0, $alpha: 0.6);
+    padding: 20px;
+    color: #fff;
+    border-radius: 5px;
+    border: #06d6a0 solid 1px;
+}
+
+.success i {
+    font-size: 50px;
+    padding: 10px 0;
+}

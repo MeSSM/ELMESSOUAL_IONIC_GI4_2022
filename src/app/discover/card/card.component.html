@@ -1,0 +1,25 @@
+<div class="card" *ngIf="training != null && !this.enrolled"> 
+  <i [ngClass]="['icon', 'heart', isFavorite?'':'outline', 'Fav']"  (click)="onFavorite($event)"></i>
+  <img *ngIf="training.cover != null" [src]="training.cover" class="training-cover">
+  <div class="card-body">
+      <p>{{training.category}}</p>
+      <p>{{training.name}}</p>
+      <p class="card-description">{{training.description}}</p>
+      <p class="price"><b>{{training.price}}</b> DH</p>
+      <button class="details" role="button" (click)="onEnroll()"><span class="text">Entroll</span></button>
+  </div>
+</div>
+
+<div class="card" *ngIf="training == null"> 
+  <div class="ui placeholder inverted">
+    <img [src]="" class="training-cover">
+  </div>
+    <div class="ui placeholder">
+      <div class="short line"></div>
+      <div class="very short line"></div>
+      <div class="full line"></div>
+      <div class="full line"></div>
+      <div class="full line"></div>
+      <div class="short line"></div>
+  </div>
+</div>

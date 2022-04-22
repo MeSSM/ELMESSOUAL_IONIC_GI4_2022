@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>EnrollForm</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <div id="container" *ngIf="selectedTrainig != null">
+      <div class="Card d-flex flex-column align-items-center" *ngIf="!this.enrolled">
+        <div *ngIf="selectedTrainig.cover == undefined" class="ui placeholder inverted">
+            <div class="imageHolder"></div>
+        </div>
+        <img *ngIf="selectedTrainig.cover != undefined" [src]="selectedTrainig.cover" alt="" class="image">
+        <p class="title mt-3 mb-0">{{selectedTrainig.name}}</p>
+        <p class="text-center">{{selectedTrainig.description}}</p>
+        <p class="mb-0">Days left : {{this.daysLeft}} days.</p>
+        <p class="mt-0">Training duration : {{this.trainingDuration}} month.</p>
+        <p class="price">{{this.selectedTrainig.price}} TTC</p>
+        <button class="details" role="button" (click)="enroll($event)"><span class="text">Confirm</span></button>
+      </div>
+
+      <div class="success" *ngIf="this.enrolled">
+        <i class="icon check circle"></i>
+        <div class="text-center">
+          <p class="mb-1">You have been successfully enrolled to :</p>
+          <h3 class="mt-1">{{selectedTrainig.name}}</h3>
+        </div>
+        
+      </div>
+    </div>
+    
+</ion-content>

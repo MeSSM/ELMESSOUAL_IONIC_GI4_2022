@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Discover</ion-title>
+    <img src="/assets/icon/logo-crop.png" alt="" slot="end" height="40px" class="me-2">
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div id="container" class="d-flex flex-column">
+    <h1 *ngIf="this.user != null" class=" ms-3">Welcome {{this.user.firstname}} !</h1>
+
+      <p class="my-2 category">Starting soon</p>
+    <app-picker [trainingList]="this.trainingList" class="picker" (loadTrainingEvent)="loadTrainingReceiver(trainingList, 'all')"></app-picker>
+      
+      <p class="my-2 category">Programming</p>
+    <app-picker [trainingList]="this.trainingListProgramming" class="picker" (loadTrainingEvent)="loadTrainingReceiver(trainingListProgramming, 'Programming')"></app-picker>
+      
+      <p class="my-2 category">Front-End</p>
+    <app-picker [trainingList]="this.trainingListFrontEnd" class="picker" (loadTrainingEvent)="loadTrainingReceiver(trainingListFrontEnd, 'WebDev Font-End')"></app-picker>
+      <p class="my-2 category">Back-End</p>
+    <app-picker [trainingList]="this.trainingListBackEnd" class="picker" (loadTrainingEvent)="loadTrainingReceiver(trainingListBackEnd, 'WebDev Back-End')"></app-picker>
+
+    <p class="my-2 category">Artifical</p>
+    <app-picker [trainingList]="this.trainingListAI" class="picker" (loadTrainingEvent)="loadTrainingReceiver(trainingListAI, 'Artifical Intelligence')"></app-picker>
+  </div>
+</ion-content>

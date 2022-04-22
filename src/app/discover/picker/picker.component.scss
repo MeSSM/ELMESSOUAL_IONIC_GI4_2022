@@ -1,0 +1,89 @@
+
+h3{
+    color: white;
+}
+.picker {
+    position: relative;
+    width: 100%;
+    background-color: #05062d;
+    animation-name: JumpIn;
+    animation-duration: 500ms;
+    margin: 0 0 10px 0;
+}
+
+
+.card-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 350px;
+    margin-top: 0px;
+    position: relative;
+    transition: 0.5s ease-in-out;
+    overflow-y: hidden;
+}
+
+
+.control {
+    background: url("/assets/icons/next.png") no-repeat;
+    background-size: cover;
+    position: absolute;
+    display: block;
+    width: 40px;
+    height: 40px;
+    border: none;
+    box-shadow: 5px 5px 15px 2px rgba(0,0,0,0.5) ;
+}
+.control-next {
+    top: 50%;
+    right: 32px;
+    border-radius: 50%;
+}
+
+.control-back {
+    top: 50%;
+    left: 32px;
+    border-radius: 50%;
+    transform: rotateY(-180deg);
+}
+
+
+@media only screen and (max-width:500px) {
+    .wrapper{
+        overflow-x: auto;
+    }
+    .control-next {
+        display: none !important;
+    }
+    .control-back {
+        display: none !important;
+    }
+}
+
+@media only screen and (min-width:1000px) {
+    .wrapper{
+        overflow-x: hidden;
+    }
+}
+
+
+
+@keyframes JumpIn {
+    0% {
+        width: 0px;
+    }
+    100% {
+        width: 100vw;
+    }
+}
+
+#search-addon {
+    background-color: #05062d;
+}
+.fa-search{
+    color: white;
+}
+.searchBox{
+    transform: translateX(20px);
+    max-width: 300px;
+}

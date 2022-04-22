@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Enrollement</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div id="container">
+    <div class="d-flex align-items-center flex-column">
+        <div class="ui segment w-100 item" *ngFor="let training of this.enrolled">
+          <img [src]="training.cover" alt="" height="50px" width="80px">
+          <p class="p-0 my-0 ms-3 d-flex text-center">{{training.name}}</p>
+          <p class="enrolled">Enrolled</p>
+        </div>
+    </div>
+  </div>
+</ion-content>
